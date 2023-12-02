@@ -1,3 +1,10 @@
+
+```bash
+mkdir ~/obs-studio #or copy from existing obs
+chmod -R o+w ~/obs-studio
+docker run --privileged --shm-size=256m --name docker-obs -d --restart unless-stopped --net johanvnet -v ~/obs-studio:/home/dockerUser/.config/obs-studio -p 5900:5900 -e VNC_PASSWD=123456 johanvandegriff/docker-obs:build1
+```
+
 [![Docker Stars](https://img.shields.io/docker/stars/bandi13/docker-obs.svg?style=flat-square)](https://hub.docker.com/r/bandi13/docker-obs/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/bandi13/docker-obs.svg?style=flat-square)](https://hub.docker.com/r/bandi13/docker-obs/)
 [![](https://images.microbadger.com/badges/image/bandi13/docker-obs.svg)](https://microbadger.com/images/bandi13/docker-obs "Get your own image badge on microbadger.com")
